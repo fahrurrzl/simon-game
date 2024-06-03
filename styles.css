@@ -3,7 +3,7 @@ body {
   background-color: #011F3F;
 }
 
-.row {
+.container .row {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,7 +20,6 @@ body {
   display: block;
   margin: auto;
   width: 50%;
-  margin: auto;
 }
 
 .btn {
