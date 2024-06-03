@@ -14,6 +14,12 @@ document.addEventListener('keypress', () => {
     nextQuestion();
   }
 });
+document.addEventListener('click', () => {
+  if (!started) {
+    started = true;
+    nextQuestion();
+  }
+});
 
 const nextQuestion = () => {
   level++;
