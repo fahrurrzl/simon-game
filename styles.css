@@ -3,6 +3,12 @@ body {
   background-color: #011F3F;
 }
 
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
@@ -12,9 +18,9 @@ body {
 
 .container {
   display: block;
+  margin: auto;
   width: 50%;
   margin: auto;
-
 }
 
 .btn {
