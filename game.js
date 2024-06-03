@@ -1,6 +1,7 @@
 const body = document.querySelector('body');
 const buttons = document.querySelectorAll('.btn');
 const levelTitle = document.querySelector('#level-title');
+const buttonStart = document.querySelector('.btn-start');
 
 const buttonColors = ['green', 'red', 'yellow', 'blue'];
 let gamePattern = [];
@@ -8,15 +9,10 @@ let userClickPattern = [];
 let level = 0;
 let started = false;
 
-document.addEventListener('keypress', () => {
+buttonStart.addEventListener('click', () => {
   if (!started) {
     started = true;
-    nextQuestion();
-  }
-});
-document.addEventListener('click', () => {
-  if (!started) {
-    started = true;
+    buttonStart.classList.add('hidden');
     nextQuestion();
   }
 });
@@ -58,6 +54,7 @@ const startOver = () => {
   level = 0;
   gamePattern = [];
   userClickPattern = [];
+  buttonStart.classList.remove('hidden');
 };
 
 const playAudio = (name) => {
@@ -79,7 +76,7 @@ const roleGame = (currentLevel) => {
       body.classList.remove('game-over');
     }, 300);
     playAudio('wrong');
-    levelTitle.innerHTML = 'Game Over, Press Any Key to Restart';
+    levelTitle.innerHTML = 'Game Over, Press Start to Restart';
     startOver();
   }
 };
